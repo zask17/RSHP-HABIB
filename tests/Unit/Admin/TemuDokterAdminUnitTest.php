@@ -61,7 +61,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-001 | Functionality | Data tersimpan saat factory create |
      * Memastikan appointment dapat dibuat dengan factory dan semua field terisi
      */
-    public function test_UT_F_TD_001_data_harus_tersimpan_saat_factory_create()
+    public function test_UT_F_TD_001_admin_data_harus_tersimpan_saat_factory_create()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -81,7 +81,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-002 | Functionality | Data tersimpan dengan status Menunggu |
      * Memastikan appointment dibuat dengan status awal Menunggu
      */
-    public function test_UT_F_TD_002_data_harus_tersimpan_dengan_status_menunggu()
+    public function test_UT_F_TD_002_admin_data_harus_tersimpan_dengan_status_menunggu()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -101,7 +101,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-003 | Functionality | Data tersimpan dengan status Selesai |
      * Memastikan appointment dapat dibuat dengan status Selesai
      */
-    public function test_UT_F_TD_003_data_harus_tersimpan_dengan_status_selesai()
+    public function test_UT_F_TD_003_admin_data_harus_tersimpan_dengan_status_selesai()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -121,7 +121,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-004 | Functionality | Data tersimpan dengan status Batal |
      * Memastikan appointment dapat dibuat dengan status Batal
      */
-    public function test_UT_F_TD_004_data_harus_tersimpan_dengan_status_batal()
+    public function test_UT_F_TD_004_admin_data_harus_tersimpan_dengan_status_batal()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -137,7 +137,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-005 | Functionality | Data dapat diambil berdasarkan ID |
      * Memastikan appointment dapat diambil dari database dengan find()
      */
-    public function test_UT_F_TD_005_data_harus_dapat_diambil_berdasarkan_id()
+    public function test_UT_F_TD_005_admin_data_harus_dapat_diambil_berdasarkan_id()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -155,7 +155,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-006 | Functionality | Data dapat diambil semua appointment |
      * Memastikan dapat mengambil semua appointment dari database
      */
-    public function test_UT_F_TD_006_data_harus_dapat_diambil_semua_appointment()
+    public function test_UT_F_TD_006_admin_data_harus_dapat_diambil_semua_appointment()
     {
         for ($i = 0; $i < 5; $i++) {
             TemuDokter::create([
@@ -175,7 +175,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-007 | Functionality | Status dapat diubah dari Menunggu ke Selesai |
      * Memastikan status appointment dapat di-update (ADMIN ONLY)
      */
-    public function test_UT_F_TD_007_status_harus_dapat_diubah_dari_menunggu_ke_selesai()
+    public function test_UT_F_TD_007_admin_status_harus_dapat_diubah_dari_menunggu_ke_selesai()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -196,7 +196,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-008 | Functionality | No urut dapat diubah |
      * Memastikan nomor urut appointment dapat di-update (ADMIN ONLY)
      */
-    public function test_UT_F_TD_008_no_urut_harus_dapat_diubah()
+    public function test_UT_F_TD_008_admin_no_urut_harus_dapat_diubah()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -214,7 +214,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-009 | Functionality | Waktu daftar dapat diubah |
      * Memastikan waktu appointment dapat di-update (ADMIN ONLY)
      */
-    public function test_UT_F_TD_009_waktu_daftar_harus_dapat_diubah()
+    public function test_UT_F_TD_009_admin_waktu_daftar_harus_dapat_diubah()
     {
         $time1 = Carbon::now();
         $time2 = Carbon::now()->addDays(5);
@@ -234,7 +234,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-010 | Functionality | Multiple field dapat diubah sekaligus |
      * Memastikan multiple fields dapat di-update dalam satu operasi (ADMIN ONLY)
      */
-    public function test_UT_F_TD_010_multiple_field_harus_dapat_diubah_sekaligus()
+    public function test_UT_F_TD_010_admin_multiple_field_harus_dapat_diubah_sekaligus()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -259,7 +259,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-011 | Functionality | Data dapat dihapus dari database |
      * Memastikan appointment dapat dihapus (ADMIN ONLY)
      */
-    public function test_UT_F_TD_011_data_harus_dapat_dihapus_dari_database()
+    public function test_UT_F_TD_011_admin_data_harus_dapat_dihapus_dari_database()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -278,7 +278,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-012 | Functionality | Multiple data dapat dihapus sekaligus |
      * Memastikan multiple appointments dapat dihapus bersamaan (ADMIN ONLY)
      */
-    public function test_UT_F_TD_012_multiple_data_harus_dapat_dihapus_sekaligus()
+    public function test_UT_F_TD_012_admin_multiple_data_harus_dapat_dihapus_sekaligus()
     {
         $temu1 = TemuDokter::create([
             'idrole_user' => 1,
@@ -312,7 +312,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-013 | Functionality | Scope active mengembalikan non-cancelled |
      * Memastikan scope active() hanya mengembalikan non-cancelled appointments
      */
-    public function test_UT_F_TD_013_scope_active_harus_mengembalikan_non_cancelled()
+    public function test_UT_F_TD_013_admin_scope_active_harus_mengembalikan_non_cancelled()
     {
         TemuDokter::create([
             'idrole_user' => 1,
@@ -343,7 +343,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-014 | Functionality | Scope pending mengembalikan status Menunggu |
      * Memastikan scope pending() hanya mengembalikan status Menunggu
      */
-    public function test_UT_F_TD_014_scope_pending_harus_mengembalikan_status_menunggu()
+    public function test_UT_F_TD_014_admin_scope_pending_harus_mengembalikan_status_menunggu()
     {
         for ($i = 0; $i < 3; $i++) {
             TemuDokter::create([
@@ -378,7 +378,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-015 | Functionality | Status 0 ditampilkan sebagai Menunggu |
      * Memastikan status code di-convert ke readable text
      */
-    public function test_UT_F_TD_015_status_0_harus_ditampilkan_sebagai_menunggu()
+    public function test_UT_F_TD_015_admin_status_0_harus_ditampilkan_sebagai_menunggu()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -394,7 +394,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-016 | Functionality | Status 1 ditampilkan sebagai Selesai |
      * Memastikan status code di-convert ke readable text
      */
-    public function test_UT_F_TD_016_status_1_harus_ditampilkan_sebagai_selesai()
+    public function test_UT_F_TD_016_admin_status_1_harus_ditampilkan_sebagai_selesai()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -410,7 +410,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-017 | Functionality | Status 2 ditampilkan sebagai Batal |
      * Memastikan status code di-convert ke readable text
      */
-    public function test_UT_F_TD_017_status_2_harus_ditampilkan_sebagai_batal()
+    public function test_UT_F_TD_017_admin_status_2_harus_ditampilkan_sebagai_batal()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -426,7 +426,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-018 | Functionality | Data dapat diurutkan berdasarkan waktu |
      * Memastikan appointment dapat diurutkan ascending berdasarkan waktu
      */
-    public function test_UT_F_TD_018_data_harus_dapat_diurutkan_berdasarkan_waktu()
+    public function test_UT_F_TD_018_admin_data_harus_dapat_diurutkan_berdasarkan_waktu()
     {
         $time1 = Carbon::now();
         $time2 = Carbon::now()->addDay();
@@ -461,7 +461,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-019 | Functionality | Data dapat diurutkan berdasarkan no_urut |
      * Memastikan appointment dapat diurutkan ascending berdasarkan nomor urut
      */
-    public function test_UT_F_TD_019_data_harus_dapat_diurutkan_berdasarkan_no_urut()
+    public function test_UT_F_TD_019_admin_data_harus_dapat_diurutkan_berdasarkan_no_urut()
     {
         TemuDokter::create([
             'idrole_user' => 1,
@@ -493,7 +493,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-020 | Functionality | Data dapat difilter berdasarkan status |
      * Memastikan appointment dapat difilter berdasarkan status tertentu
      */
-    public function test_UT_F_TD_020_data_harus_dapat_difilter_berdasarkan_status()
+    public function test_UT_F_TD_020_admin_data_harus_dapat_difilter_berdasarkan_status()
     {
         for ($i = 0; $i < 3; $i++) {
             TemuDokter::create([
@@ -531,7 +531,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-021 | Functionality | Total data dapat dihitung |
      * Memastikan dapat menghitung total appointment
      */
-    public function test_UT_F_TD_021_total_data_harus_dapat_dihitung()
+    public function test_UT_F_TD_021_admin_total_data_harus_dapat_dihitung()
     {
         for ($i = 0; $i < 10; $i++) {
             TemuDokter::create([
@@ -551,7 +551,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-022 | Functionality | Status constant bernilai benar |
      * Memastikan status constants memiliki nilai yang benar
      */
-    public function test_UT_F_TD_022_status_constant_harus_bernilai_benar()
+    public function test_UT_F_TD_022_admin_status_constant_harus_bernilai_benar()
     {
         $this->assertEquals('0', TemuDokter::STATUS_MENUNGGU);
         $this->assertEquals('1', TemuDokter::STATUS_SELESAI);
@@ -562,7 +562,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-023 | Functionality | Primary key adalah idreservasi_dokter |
      * Memastikan primary key model adalah idreservasi_dokter
      */
-    public function test_UT_F_TD_023_primary_key_harus_adalah_idreservasi_dokter()
+    public function test_UT_F_TD_023_admin_primary_key_harus_adalah_idreservasi_dokter()
     {
         $temu = new TemuDokter();
 
@@ -573,7 +573,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-024 | Functionality | Table name adalah temu_dokter |
      * Memastikan model terhubung ke tabel temu_dokter
      */
-    public function test_UT_F_TD_024_table_name_harus_adalah_temu_dokter()
+    public function test_UT_F_TD_024_admin_table_name_harus_adalah_temu_dokter()
     {
         $temu = new TemuDokter();
 
@@ -584,7 +584,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-025 | Functionality | Fillable attributes terdapat semua field |
      * Memastikan semua fields yang diperlukan adalah mass assignable
      */
-    public function test_UT_F_TD_025_fillable_attributes_harus_terdapat_semua_field()
+    public function test_UT_F_TD_025_admin_fillable_attributes_harus_terdapat_semua_field()
     {
         $temu = new TemuDokter();
         $fillable = $temu->getFillable();
@@ -599,7 +599,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-026 | Functionality | Timestamps tidak diaktifkan |
      * Memastikan model tidak auto-manage created_at/updated_at
      */
-    public function test_UT_F_TD_026_timestamps_harus_tidak_diaktifkan()
+    public function test_UT_F_TD_026_admin_timestamps_harus_tidak_diaktifkan()
     {
         $temu = new TemuDokter();
 
@@ -610,7 +610,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-027 | Functionality | Status di-cast sebagai string |
      * Memastikan status di-cast sebagai string saat retrieval
      */
-    public function test_UT_F_TD_027_status_harus_di_cast_sebagai_string()
+    public function test_UT_F_TD_027_admin_status_harus_di_cast_sebagai_string()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -628,7 +628,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-028 | Functionality | Waktu daftar di-cast sebagai datetime |
      * Memastikan waktu_daftar di-cast sebagai Carbon instance
      */
-    public function test_UT_F_TD_028_waktu_daftar_harus_di_cast_sebagai_datetime()
+    public function test_UT_F_TD_028_admin_waktu_daftar_harus_di_cast_sebagai_datetime()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -645,7 +645,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-029 | Functionality | Bulk update status dapat dilakukan |
      * Memastikan dapat bulk update status multiple appointments (ADMIN ONLY)
      */
-    public function test_UT_F_TD_029_bulk_update_status_harus_dapat_dilakukan()
+    public function test_UT_F_TD_029_admin_bulk_update_status_harus_dapat_dilakukan()
     {
         for ($i = 0; $i < 5; $i++) {
             TemuDokter::create([
@@ -666,7 +666,7 @@ class TemuDokterAdminUnitTest extends TestCase
      * UT-F-TD-030 | Functionality | Data integritas terjaga saat simpan |
      * Memastikan data yang disimpan di database sesuai dengan input
      */
-    public function test_UT_F_TD_030_data_integritas_harus_terjaga_saat_simpan()
+    public function test_UT_F_TD_030_admin_data_integritas_harus_terjaga_saat_simpan()
     {
         $data = [
             'idrole_user' => 1,
@@ -687,10 +687,10 @@ class TemuDokterAdminUnitTest extends TestCase
     // ============ DATA VALIDATION TESTS (ADMIN) ============
 
     /**
-     * UT-VTD-001 | Data Validation | Harus gagal jika idrole_user kosong |
+     * UT-V_TD-001 | Data Validation | Harus gagal jika idrole_user kosong |
      * Memastikan appointment tidak dapat dibuat tanpa dokter reference
      */
-    public function test_UT_VTD_001_harus_gagal_jika_idrole_user_kosong()
+    public function test_UT_V_TD_001_admin_harus_gagal_jika_idrole_user_kosong()
     {
         try {
             TemuDokter::create([
@@ -706,10 +706,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-002 | Data Validation | Harus gagal jika waktu_daftar kosong |
+     * UT-V_TD-002 | Data Validation | Harus gagal jika waktu_daftar kosong |
      * Memastikan appointment tidak dapat dibuat tanpa waktu registrasi
      */
-    public function test_UT_VTD_002_harus_gagal_jika_waktu_daftar_kosong()
+    public function test_UT_V_TD_002_admin_harus_gagal_jika_waktu_daftar_kosong()
     {
         try {
             TemuDokter::create([
@@ -725,10 +725,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-003 | Data Validation | Harus gagal jika no_urut kosong |
+     * UT-V_TD-003 | Data Validation | Harus gagal jika no_urut kosong |
      * Memastikan appointment tidak dapat dibuat tanpa nomor urut
      */
-    public function test_UT_VTD_003_harus_gagal_jika_no_urut_kosong()
+    public function test_UT_V_TD_003_admin_harus_gagal_jika_no_urut_kosong()
     {
         try {
             TemuDokter::create([
@@ -744,10 +744,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-004 | Data Validation | Harus gagal jika status kosong |
+     * UT-V_TD-004 | Data Validation | Harus gagal jika status kosong |
      * Memastikan appointment tidak dapat dibuat tanpa status
      */
-    public function test_UT_VTD_004_harus_gagal_jika_status_kosong()
+    public function test_UT_V_TD_004_admin_harus_gagal_jika_status_kosong()
     {
         try {
             TemuDokter::create([
@@ -763,10 +763,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-005 | Data Validation | Harus gagal jika idrole_user null |
+     * UT-V_TD-005 | Data Validation | Harus gagal jika idrole_user null |
      * Memastikan appointment tidak dapat dibuat dengan idrole_user null
      */
-    public function test_UT_VTD_005_harus_gagal_jika_idrole_user_null()
+    public function test_UT_V_TD_005_admin_harus_gagal_jika_idrole_user_null()
     {
         try {
             TemuDokter::create([
@@ -783,10 +783,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-006 | Data Validation | Harus gagal jika waktu_daftar null |
+     * UT-V_TD-006 | Data Validation | Harus gagal jika waktu_daftar null |
      * Memastikan appointment tidak dapat dibuat dengan waktu_daftar null
      */
-    public function test_UT_VTD_006_harus_gagal_jika_waktu_daftar_null()
+    public function test_UT_V_TD_006_admin_harus_gagal_jika_waktu_daftar_null()
     {
         try {
             TemuDokter::create([
@@ -803,10 +803,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-007 | Data Validation | Harus gagal jika no_urut null |
+     * UT-V_TD-007 | Data Validation | Harus gagal jika no_urut null |
      * Memastikan appointment tidak dapat dibuat dengan no_urut null
      */
-    public function test_UT_VTD_007_harus_gagal_jika_no_urut_null()
+    public function test_UT_V_TD_007_admin_harus_gagal_jika_no_urut_null()
     {
         try {
             TemuDokter::create([
@@ -823,10 +823,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-008 | Data Validation | Harus gagal jika status null |
+     * UT-V_TD-008 | Data Validation | Harus gagal jika status null |
      * Memastikan appointment tidak dapat dibuat dengan status null
      */
-    public function test_UT_VTD_008_harus_gagal_jika_status_null()
+    public function test_UT_V_TD_008_admin_harus_gagal_jika_status_null()
     {
         try {
             TemuDokter::create([
@@ -843,10 +843,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-009 | Data Validation | Harus gagal jika semua field kosong |
+     * UT-V_TD-009 | Data Validation | Harus gagal jika semua field kosong |
      * Memastikan appointment tidak dapat dibuat dengan semua field kosong
      */
-    public function test_UT_VTD_009_harus_gagal_jika_semua_field_kosong()
+    public function test_UT_V_TD_009_admin_harus_gagal_jika_semua_field_kosong()
     {
         try {
             TemuDokter::create([]);
@@ -858,10 +858,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-010 | Data Validation | Harus gagal jika hanya 1 field terisi |
+     * UT-V_TD-010 | Data Validation | Harus gagal jika hanya 1 field terisi |
      * Memastikan appointment tidak dapat dibuat dengan hanya 1 field
      */
-    public function test_UT_VTD_010_harus_gagal_jika_hanya_1_field_terisi()
+    public function test_UT_V_TD_010_admin_harus_gagal_jika_hanya_1_field_terisi()
     {
         try {
             TemuDokter::create(['idrole_user' => 1]);
@@ -873,10 +873,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-011 | Data Validation | Harus gagal jika hanya 2 field terisi |
+     * UT-V_TD-011 | Data Validation | Harus gagal jika hanya 2 field terisi |
      * Memastikan appointment tidak dapat dibuat dengan hanya 2 field
      */
-    public function test_UT_VTD_011_harus_gagal_jika_hanya_2_field_terisi()
+    public function test_UT_V_TD_011_admin_harus_gagal_jika_hanya_2_field_terisi()
     {
         try {
             TemuDokter::create([
@@ -891,10 +891,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-012 | Data Validation | Harus gagal jika hanya 3 field terisi |
+     * UT-V_TD-012 | Data Validation | Harus gagal jika hanya 3 field terisi |
      * Memastikan appointment tidak dapat dibuat dengan hanya 3 field
      */
-    public function test_UT_VTD_012_harus_gagal_jika_hanya_3_field_terisi()
+    public function test_UT_V_TD_012_admin_harus_gagal_jika_hanya_3_field_terisi()
     {
         try {
             TemuDokter::create([
@@ -910,10 +910,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-013 | Data Validation | Harus gagal jika waktu format invalid |
+     * UT-V_TD-013 | Data Validation | Harus gagal jika waktu format invalid |
      * Memastikan appointment tidak dapat dibuat dengan format waktu tidak valid
      */
-    public function test_UT_VTD_013_harus_gagal_jika_waktu_format_invalid()
+    public function test_UT_V_TD_013_admin_harus_gagal_jika_waktu_format_invalid()
     {
         try {
             TemuDokter::create([
@@ -930,10 +930,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-014 | Data Validation | Harus gagal jika update idrole_user ke null |
+     * UT-V_TD-014 | Data Validation | Harus gagal jika update idrole_user ke null |
      * Memastikan update appointment tidak bisa set idrole_user null (ADMIN ONLY CONSTRAINT)
      */
-    public function test_UT_VTD_014_harus_gagal_jika_update_idrole_user_ke_null()
+    public function test_UT_V_TD_014_admin_harus_gagal_jika_update_idrole_user_ke_null()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -951,10 +951,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-015 | Data Validation | Harus gagal jika update waktu ke null |
+     * UT-V_TD-015 | Data Validation | Harus gagal jika update waktu ke null |
      * Memastikan update tidak bisa set waktu_daftar null (ADMIN ONLY CONSTRAINT)
      */
-    public function test_UT_VTD_015_harus_gagal_jika_update_waktu_ke_null()
+    public function test_UT_V_TD_015_admin_harus_gagal_jika_update_waktu_ke_null()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -972,10 +972,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-016 | Data Validation | Harus gagal jika update no_urut ke null |
+     * UT-V_TD-016 | Data Validation | Harus gagal jika update no_urut ke null |
      * Memastikan update tidak bisa set no_urut null (ADMIN ONLY CONSTRAINT)
      */
-    public function test_UT_VTD_016_harus_gagal_jika_update_no_urut_ke_null()
+    public function test_UT_V_TD_016_admin_harus_gagal_jika_update_no_urut_ke_null()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -993,10 +993,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-017 | Data Validation | Harus gagal jika update status ke null |
+     * UT-V_TD-017 | Data Validation | Harus gagal jika update status ke null |
      * Memastikan update tidak bisa set status null (ADMIN ONLY CONSTRAINT)
      */
-    public function test_UT_VTD_017_harus_gagal_jika_update_status_ke_null()
+    public function test_UT_V_TD_017_admin_harus_gagal_jika_update_status_ke_null()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -1014,10 +1014,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-018 | Data Validation | Harus gagal jika duplicate primary key |
+     * UT-V_TD-018 | Data Validation | Harus gagal jika duplicate primary key |
      * Memastikan tidak bisa membuat 2 appointment dengan ID sama (ADMIN ONLY VIEW)
      */
-    public function test_UT_VTD_018_harus_gagal_jika_duplicate_primary_key()
+    public function test_UT_V_TD_018_admin_harus_gagal_jika_duplicate_primary_key()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -1042,10 +1042,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-019 | Data Validation | Harus SUKSES jika semua 4 field lengkap |
+     * UT-V_TD-019 | Data Validation | Harus SUKSES jika semua 4 field lengkap |
      * Memastikan appointment DAPAT dibuat ketika semua 4 field terisi lengkap
      */
-    public function test_UT_VTD_019_harus_sukses_jika_semua_4_field_lengkap()
+    public function test_UT_V_TD_019_admin_harus_sukses_jika_semua_4_field_lengkap()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -1063,10 +1063,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-020 | Data Validation | Harus SUKSES dengan factory override |
+     * UT-V_TD-020 | Data Validation | Harus SUKSES dengan factory override |
      * Memastikan dapat membuat appointment dengan custom values
      */
-    public function test_UT_VTD_020_harus_sukses_dengan_factory_override()
+    public function test_UT_V_TD_020_admin_harus_sukses_dengan_factory_override()
     {
         $temu = TemuDokter::create([
             'idrole_user' => 1,
@@ -1081,10 +1081,10 @@ class TemuDokterAdminUnitTest extends TestCase
     }
 
     /**
-     * UT-VTD-021 | Data Validation | Harus gagal jika 2 field required kosong |
+     * UT-V_TD-021 | Data Validation | Harus gagal jika 2 field required kosong |
      * Memastikan tidak bisa buat appointment dengan 2 field required kosong
      */
-    public function test_UT_VTD_021_harus_gagal_jika_2_field_required_kosong()
+    public function test_UT_V_TD_021_admin_harus_gagal_jika_2_field_required_kosong()
     {
         try {
             TemuDokter::create([
