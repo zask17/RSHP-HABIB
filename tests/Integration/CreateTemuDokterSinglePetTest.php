@@ -82,8 +82,7 @@ class CreateTemuDokterSinglePetTest extends TestCase
     }
 
     /**
-     * TEST: Skenario IT-RM-DRM-003 (Skenario Positif)
-     * Alur Create Temu Dokter sampai Rekam Medis (Single Pet)
+     * TEST: Skenario Alur Create Temu Dokter sampai Rekam Medis (Single Pet) (Positif) 
      */
     public function test_proses_create_temu_dokter_dengan_single_pet()
     {

@@ -74,8 +74,7 @@ class RekamMedisKosongTest extends TestCase
     }
 
     /**
-     * TEST: Skenario Negatif IT-TM-RM-02
-     * Input rekam medis sampai detail dengan semua field kosong
+     * TEST: Skenario Negatif - Input rekam medis dengan semua field kosong harus ditolak
      */
     public function test_alur_input_rekam_medis_dengan_field_kosong_harus_ditolak()
     {

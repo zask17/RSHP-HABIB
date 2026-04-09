@@ -27,7 +27,7 @@ class RekamMedisMultiplePetsTest extends TestCase
     {
         parent::setUp();
 
-        // 1. Setup Role & User Admin [cite: 67, 71]
+        // 1. Setup Role & User Admin
         $adminRole = Role::create(['nama_role' => 'Administrator']);
         $dokterRole = Role::create(['nama_role' => 'Dokter']);
 
@@ -42,7 +42,7 @@ class RekamMedisMultiplePetsTest extends TestCase
             ->where('idrole', $dokterRole->idrole)
             ->first();
 
-        // 2. Setup Pemilik (ID Manual) [cite: 105]
+        // 2. Setup Pemilik (ID Manual)
         DB::table('pemilik')->insert([
             'idpemilik' => 1,
             'iduser' => $this->admin->iduser,
@@ -50,7 +50,7 @@ class RekamMedisMultiplePetsTest extends TestCase
             'alamat' => 'Surabaya'
         ]);
 
-        // 3. Setup Master Data Hewan [cite: 114]
+        // 3. Setup Master Data Hewan
         DB::table('jenis_hewan')->insert(['idjenis_hewan' => 1, 'nama_jenis_hewan' => 'Kucing']);
         DB::table('ras_hewan')->insert(['idras_hewan' => 1, 'nama_ras' => 'Persia', 'idjenis_hewan' => 1]);
 
@@ -71,8 +71,7 @@ class RekamMedisMultiplePetsTest extends TestCase
     }
 
     /**
-     * TEST: Skenario IT-RM-DRM-004 (Positif)
-     * Proses input rekam medis menggunakan salah satu pet dari user dengan multiple pets.
+     * TEST: Skenario Positif - Proses input rekam medis menggunakan salah satu pet dari user dengan multiple pets.
      */
     public function test_proses_input_rekam_medis_menggunakan_pet_dari_user_dengan_multiple_pets()
     {
@@ -85,7 +84,7 @@ class RekamMedisMultiplePetsTest extends TestCase
             'no_urut' => 1
         ]);
 
-        // --- LANGKAH 2: Simpan Rekam Medis untuk Reservasi Bobby [cite: 81, 550] ---
+        // --- LANGKAH 2: Simpan Rekam Medis untuk Reservasi Bobby ---
         $payload = [
             'idpet' => $this->petKedua->idpet,
             'anamnesa' => 'Nafsu makan menurun selama 2 hari.',
@@ -94,15 +93,15 @@ class RekamMedisMultiplePetsTest extends TestCase
             'detail_tindakan' => []
         ];
 
-        // Kirim request ke storeRekamMedis [cite: 557]
+        // Kirim request ke storeRekamMedis
         $response = $this->actingAs($this->admin)
             ->postJson(route('data.temu-dokter.store-rekam-medis', ['id' => $reservasiBobby->idreservasi_dokter]), $payload);
 
-        // --- LANGKAH 3: Verifikasi Hasil (Level 3) [cite: 81, 558] ---
+        // --- LANGKAH 3: Verifikasi Hasil (Level 3) ---
         $response->assertStatus(200);
         $response->assertJson(['success' => true]);
 
-        // Verifikasi rekam medis tersimpan untuk Bobby [cite: 560, 561]
+        // Verifikasi rekam medis tersimpan untuk Bobby
         $this->assertDatabaseHas('rekam_medis', [
             'idreservasi_dokter' => $reservasiBobby->idreservasi_dokter,
             'idpet' => $this->petKedua->idpet,
@@ -114,7 +113,7 @@ class RekamMedisMultiplePetsTest extends TestCase
             'idpet' => $this->petPertama->idpet
         ]);
 
-        // Verifikasi melalui relasi (Top-Down) [cite: 571, 573]
+        // Verifikasi melalui relasi (Top-Down)
         $rekamMedis = DB::table('rekam_medis')->where('idreservasi_dokter', $reservasiBobby->idreservasi_dokter)->first();
         $this->assertEquals($this->petKedua->idpet, $rekamMedis->idpet, 'ID Pet pada rekam medis harus sesuai dengan Bobby');
     }

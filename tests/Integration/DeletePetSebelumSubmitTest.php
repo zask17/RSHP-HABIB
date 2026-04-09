@@ -74,8 +74,7 @@ class DeletePetSebelumSubmitTest extends TestCase
     }
 
     /**
-     * TEST: Skenario Negatif IT-RM-DRM-005 
-     * Verifikasi sistem menolak rekam medis jika hewan dihapus sebelum submit
+     * TEST: Skenario Negatif - Verifikasi sistem menolak rekam medis jika hewan dihapus sebelum submit
      */
     public function test_proses_input_rekam_medis_saat_pet_dihapus_sebelum_submit()
     {
