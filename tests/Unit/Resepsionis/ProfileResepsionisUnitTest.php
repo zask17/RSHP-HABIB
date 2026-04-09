@@ -144,7 +144,7 @@ class PetResepsionisUnitTest extends TestCase
     {
         try {
             $pet = new Pet();
-            $pet->nama = null;
+            $pet->nama = null; // Memicu error jika database NOT NULL
             $pet->jenis_kelamin = 'F';
             $pet->idpemilik = 1;
             $pet->idras_hewan = 1;
