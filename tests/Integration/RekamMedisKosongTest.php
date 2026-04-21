@@ -76,22 +76,22 @@ class RekamMedisKosongTest extends TestCase
     /**
      * TEST: Skenario Negatif - Input rekam medis dengan semua field kosong harus ditolak
      */
-    public function test_alur_input_rekam_medis_dengan_field_kosong_harus_ditolak()
+    public function test_proses_input_rekam_medis_dengan_field_kosong_harus_ditolak()
     {
         // Hitung jumlah data awal di database
         $jumlahRMAwal = DB::table('rekam_medis')->count();
         $jumlahDetailAwal = DB::table('detail_rekam_medis')->count();
 
-        // --- LANGKAH 1: Simulasi Input Form Kosong oleh Perawat/Admin ---
+        // Simulasi Input Form Kosong oleh Perawat/Admin ---
         $payloadKosong = [
             'idpet' => $this->pet->idpet,
-            'anamnesa' => null,      // Kosong
-            'temuan_klinis' => null, // Kosong
-            'diagnosa' => null,      // Kosong
+            'anamnesa' => null,
+            'temuan_klinis' => null,
+            'diagnosa' => null,
             'detail_tindakan' => [
                 [
                     'idkode_tindakan_terapi' => null,
-                    'detail' => null // Kosong
+                    'detail' => null
                 ]
             ]
         ];
